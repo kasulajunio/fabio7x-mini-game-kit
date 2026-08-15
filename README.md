@@ -2,7 +2,15 @@
 
 > Um kit open source, em português, para transformar ideias de arcade em experiências web pequenas, rápidas e personalizáveis.
 
+[![Abrir demo](https://img.shields.io/badge/ABRIR_DEMO-00d9ff?style=for-the-badge&logo=googlechrome&logoColor=07121b)](https://kasulajunio.github.io/fabio7x-mini-game-kit/)
+[![Licença MIT](https://img.shields.io/badge/LICEN%C3%87A-MIT-9b5cff?style=for-the-badge&logo=opensourceinitiative&logoColor=white)](LICENSE)
+[![Mobile first](https://img.shields.io/badge/MOBILE-FIRST-ff3e67?style=for-the-badge&logo=android&logoColor=white)](https://kasulajunio.github.io/fabio7x-mini-game-kit/)
+
 O projeto reúne três mecânicas independentes em **HTML, CSS e JavaScript puro**. A página `index.html` também funciona como uma demonstração jogável, sem etapa de build, contas de terceiros ou chaves de API.
+
+## Demo online
+
+Abra a [demo jogável do Mini Game Kit](https://kasulajunio.github.io/fabio7x-mini-game-kit/) para testar as três mecânicas diretamente no navegador. Ela funciona em celular e computador, com controles de toque, teclado e pausa onde aplicável.
 
 | Módulo | O que demonstra | Controle |
 | --- | --- | --- |
@@ -29,6 +37,10 @@ const cleanup = neonReflex();
 // Ao trocar de tela ou reiniciar o jogo:
 cleanup();
 ```
+
+## Do kit para um jogo completo
+
+O Mini Game Kit é uma base de estudo. Para ver como uma ideia pode virar uma experiência arcade maior, abra também o [NEXO Rift Runner](https://kasulajunio.github.io/nexo-rift-runner.html), jogo gratuito da Fabio7X com corrida, energia, impulso, recorde local e controles pensados para telas pequenas.
 
 ## Próximas evoluções
 
