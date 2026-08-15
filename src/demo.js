@@ -52,9 +52,10 @@ function pixelDodge() {
   const hazards = []; const draw = () => { ship.style.left = `${x}%`; };
   const move = delta => { if (!alive || paused) return; x = Math.min(91, Math.max(0, x + delta)); draw(); };
   const keyMove = event => { if (['ArrowLeft', 'a', 'A'].includes(event.key)) { event.preventDefault(); move(-8); } if (['ArrowRight', 'd', 'D'].includes(event.key)) { event.preventDefault(); move(8); } };
-  const startHold = delta => event => { event.preventDefault(); move(delta); hold = setInterval(() => move(delta), 95); };
+  const startHold = delta => event => { event.preventDefault(); clearInterval(hold); move(delta); hold = setInterval(() => move(delta), 95); };
   const stopHold = () => clearInterval(hold); let hold = null;
-  document.addEventListener('keydown', keyMove); leftControl.addEventListener('pointerdown', startHold(-8)); rightControl.addEventListener('pointerdown', startHold(8)); ['pointerup','pointercancel','pointerleave'].forEach(type => { leftControl.addEventListener(type, stopHold); rightControl.addEventListener(type, stopHold); });
+  const leftHold = startHold(-8); const rightHold = startHold(8); const releaseEvents = ['pointerup', 'pointercancel', 'pointerleave'];
+  document.addEventListener('keydown', keyMove); leftControl.addEventListener('pointerdown', leftHold); rightControl.addEventListener('pointerdown', rightHold); releaseEvents.forEach(type => { leftControl.addEventListener(type, stopHold); rightControl.addEventListener(type, stopHold); });
   draw(); status.textContent = 'sobreviveu 0s';
   function spawnHazard() { const hazard = document.createElement('div'); hazard.className = 'hazard'; hazard.style.left = `${Math.random() * 88}%`; hazard.style.top = '-42px'; root.append(hazard); hazards.push({ el: hazard, y: -42, speed: 190 + Math.random() * 85 }); }
   function finish() { alive = false; hazards.forEach(h => h.el.remove()); overlay(`FIM · ${score}s`); status.textContent = `fim · ${score}s sobrevividos`; pause.disabled = true; }
@@ -66,7 +67,7 @@ function pixelDodge() {
   }
   togglePause = () => { if (!alive) return; paused = !paused; pause.textContent = paused ? 'RETOMAR' : 'PAUSAR'; if (paused) overlay('PAUSADO'); else root.querySelector('.game-overlay')?.remove(); };
   requestAnimationFrame(loop);
-  return () => { alive = false; clearInterval(hold); document.removeEventListener('keydown', keyMove); togglePause = () => {}; };
+  return () => { alive = false; clearInterval(hold); document.removeEventListener('keydown', keyMove); leftControl.removeEventListener('pointerdown', leftHold); rightControl.removeEventListener('pointerdown', rightHold); releaseEvents.forEach(type => { leftControl.removeEventListener(type, stopHold); rightControl.removeEventListener(type, stopHold); }); togglePause = () => {}; };
 }
 
 function memoryPulse() {

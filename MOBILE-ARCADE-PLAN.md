@@ -14,4 +14,8 @@ Elevar a demonstração para uma experiência mais confortável no celular, sem 
 
 ## Validação inicial
 
-Na prévia HTTP local, o **Neon Reflex** iniciou com alvo criado, contador ativo e pausa funcional, apresentando o overlay “PAUSADO” ao interromper a rodada. O **Pixel Dodge** iniciou com a nave renderizada e os controles táteis habilitados. A próxima validação cobre Memory Pulse e o viewport de celular antes da publicação no GitHub Pages.
+Na prévia HTTP local, o **Neon Reflex** iniciou com alvo criado, contador ativo e pausa funcional, apresentando o overlay “PAUSADO” ao interromper a rodada. O **Pixel Dodge** iniciou com a nave renderizada e os controles táteis habilitados. O **Memory Pulse** carregou a grade com oito cartas e contagem de pares, mantendo pausa desabilitada por não usar cronômetro contínuo.
+
+Em 15 de agosto de 2026, a versão pública publicada em https://kasulajunio.github.io/fabio7x-mini-game-kit/ foi verificada. O Neon Reflex criou o alvo e habilitou pausa; o Pixel Dodge exibiu os controles móveis e respondeu ao comando de movimento. A experiência foi projetada com regras responsivas para telas de até 610 px; a próxima revisão em aparelho físico pode complementar esta validação com feedback de uso real.
+
+Após a correção do ciclo de vida dos listeners, o Pixel Dodge foi reiniciado e alternado entre jogos repetidamente. Em cada nova rodada, um toque no controle esquerdo deslocou a nave exatamente de 46% para 38%, sem acúmulo de movimentos. Isso confirma a remoção dos listeners de toque ao trocar ou reiniciar a partida.
