@@ -2,18 +2,47 @@
 <html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
     <meta name="theme-color" content="#080812" />
+    <meta name="description" content="Fabio7X Mini Game Kit: três mecânicas web responsivas, abertas e feitas para jogar no celular." />
     <title>Fabio7X Mini Game Kit</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main class="shell">
-      <header><a href="https://github.com/kasulajunio" class="brand">FABIO<span>7X</span> / MINI GAME KIT</a><a href="https://github.com/kasulajunio/fabio7x-mini-game-kit" class="source">VER CÓDIGO ↗</a></header>
-      <section class="intro"><p class="eyebrow">OPEN SOURCE / WEB ARCADE</p><h1>TRÊS MECÂNICAS.<br><em>UM PONTO DE PARTIDA.</em></h1><p class="lead">Um kit pequeno para estudar, adaptar e publicar mini jogos web. Escolha uma demo e veja a mecânica em ação.</p></section>
-      <nav class="chooser" aria-label="Escolher demo"><button data-game="reflex" class="active">01 / Neon Reflex</button><button data-game="dodge">02 / Pixel Dodge</button><button data-game="memory">03 / Memory Pulse</button></nav>
-      <section class="game-card"><div class="status"><span id="game-name">NEON REFLEX</span><span id="game-status">clique em iniciar</span></div><div id="game" role="application" aria-label="Área do mini jogo"></div><div class="controls"><button id="start">INICIAR</button><span id="hint">Clique no núcleo rosa antes que ele desapareça.</span></div></section>
-      <section class="notes"><article><b>Leve</b><span>HTML, CSS e JavaScript puro.</span></article><article><b>Reutilizável</b><span>Cada mecânica vive em um módulo.</span></article><article><b>Responsivo</b><span>Funciona com mouse, toque e teclado.</span></article></section>
+      <header>
+        <a href="https://github.com/kasulajunio" class="brand">FABIO<span>7X</span> / MINI GAME KIT</a>
+        <a href="https://github.com/kasulajunio/fabio7x-mini-game-kit" class="source">VER CÓDIGO ↗</a>
+      </header>
+      <section class="intro">
+        <p class="eyebrow">OPEN SOURCE / MOBILE WEB ARCADE</p>
+        <h1>TRÊS MECÂNICAS.<br /><em>UM PONTO DE PARTIDA.</em></h1>
+        <p class="lead">Escolha uma demo, jogue com toque ou teclado e use as mecânicas como base para criar algo novo. Tudo roda direto no navegador.</p>
+      </section>
+      <nav class="chooser" aria-label="Escolher demo">
+        <button data-game="reflex" class="active">01 / Neon Reflex</button>
+        <button data-game="dodge">02 / Pixel Dodge</button>
+        <button data-game="memory">03 / Memory Pulse</button>
+      </nav>
+      <section class="game-card" aria-live="polite">
+        <div class="status"><span id="game-name">NEON REFLEX</span><span id="game-status">toque em iniciar</span></div>
+        <div id="game" role="application" aria-label="Área do mini jogo" tabindex="0"></div>
+        <div class="controls">
+          <button id="start">INICIAR</button>
+          <button id="pause" class="secondary" disabled>PAUSAR</button>
+          <span id="hint">Toque no núcleo rosa antes que ele desapareça.</span>
+        </div>
+        <div id="touch-controls" class="touch-controls" hidden aria-label="Controles de movimento">
+          <button id="move-left" aria-label="Mover nave para a esquerda">◀</button>
+          <span>TOQUE PARA DESVIAR</span>
+          <button id="move-right" aria-label="Mover nave para a direita">▶</button>
+        </div>
+      </section>
+      <section class="notes">
+        <article><b>FEITO PARA TOCAR</b><span>Alvos maiores, botões acessíveis e controles móveis.</span></article>
+        <article><b>FEEDBACK IMEDIATO</b><span>Pausa, pontuação, vibração opcional e estados claros.</span></article>
+        <article><b>LEVE E ABERTO</b><span>HTML, CSS e JavaScript puro para estudar e adaptar.</span></article>
+      </section>
       <footer>Fabio7X Mini Game Kit · use, estude e crie algo novo.</footer>
     </main>
     <script type="module" src="src/demo.js"></script>
